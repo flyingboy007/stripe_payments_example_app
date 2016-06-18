@@ -18,7 +18,7 @@ class ChargesController < ApplicationController
                                description: charge.description,
                                currency: charge.currency,
                                customer_id: customer.id,
-                               product_id: 1)
+                               product_id: 1, uuid: SecureRandom.uuid)
 
     redirect_to purchase
   rescue Stripe::CardError => e
